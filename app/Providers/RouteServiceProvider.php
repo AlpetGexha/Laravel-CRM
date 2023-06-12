@@ -7,34 +7,68 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use RuntimeException;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * The path to your application's "home" route.
-     *
-     * Typically, users are redirected here after authentication.
-     *
      * @var string
      */
     public const HOME = '/home';
 
     /**
-     * Define your route model bindings, pattern filters, and other route configuration.
+     * @return void
      */
     public function boot(): void
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
-        });
+        $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
+            foreach ($this->centralDomains() as $domain) {
+                Route::prefix('api')
+                    ->domain($domain)
+                    ->as('api:')
+                    ->middleware([
+                        'api',
+                        //                        InitializeTenancyByDomain::class,
+                        //                        PreventAccessFromCentralDomains::class,
+                    ])->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+                Route::middleware('web')
+                    ->domain($domain)
+                    ->group(base_path('routes/web.php'));
+            }
         });
+    }
+
+    /**
+     * @return array
+     */
+    protected function centralDomains(): array
+    {
+        $domains = config('tenancy.central_domains');
+
+        if (!is_array($domains)) {
+            throw new RuntimeException(
+                message: "Tenanct Central Domains should be an array",
+            );
+        }
+
+        return (array) $domains;
+    }
+
+    /**
+     * @return void
+     */
+    protected function configureRateLimiting(): void
+    {
+        RateLimiter::for(
+            'api',
+            fn (Request $request) =>
+            /** @phpstan-ignore-next-line  */
+            Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip())
+        );
     }
 }

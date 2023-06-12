@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             foreach ($this->centralDomains() as $domain) {
-                Route::prefix('api')
+                Route::prefix('api/v1')
                     ->domain($domain)
                     ->as('api:')
                     ->middleware([

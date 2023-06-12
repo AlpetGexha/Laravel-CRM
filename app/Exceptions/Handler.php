@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -25,6 +26,18 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+
+        $this->renderable(function (Throwable $e) {
+            // if we get any http error we respond just with the code only on API route
+            if (request()->is('api/*')) {
+                if ($e instanceof HttpException) {
+                    return response()->json([
+                        'http' => $e->getStatusCode(),
+                        'message' => $e->getMessage(),
+                    ], $e->getStatusCode());
+                }
+            }
         });
     }
 }

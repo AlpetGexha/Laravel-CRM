@@ -16,7 +16,7 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/';
 
     /**
      * @return void
@@ -27,14 +27,21 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             foreach ($this->centralDomains() as $domain) {
-                Route::prefix('api/v1')
+
+                Route::middleware([
+                    'api', 'api_version:v1',
+                    // InitializeTenancyByDomain::class,
+                    // PreventAccessFromCentralDomains::class,
+                ])
+                    ->prefix('api/v1')
                     ->domain($domain)
                     ->as('api:')
-                    ->middleware([
-                        'api',
-                        //                        InitializeTenancyByDomain::class,
-                        //                        PreventAccessFromCentralDomains::class,
-                    ])->group(base_path('routes/api.php'));
+                    ->group(base_path('routes/api.php'));
+
+                // Route::middleware(['api', 'api_version:v2'])
+                //     ->prefix('api/v2')
+                //     ->group(base_path('routes/api2.php'));
+
 
                 Route::middleware('web')
                     ->domain($domain)

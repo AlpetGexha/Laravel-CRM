@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
                 ])
                     ->prefix('api/v1')
                     ->domain($domain)
-                    ->as('api:')
+                    ->as('api.')
                     ->group(base_path('routes/api.php'));
 
                 // Route::middleware(['api', 'api_version:v2'])

@@ -37,7 +37,7 @@ Route::group([
 ], function () {
     Route::get('/index', 'index')->name('index');
     Route::post('/store', 'store')->name('store');
-    // Route::put('/update/{Contact:uuid}', 'update')->name('update');
+    Route::put('/update/{uuid}', 'update')->name('update');
     Route::get('/{uuid}', 'show')->name('show');
 });
 

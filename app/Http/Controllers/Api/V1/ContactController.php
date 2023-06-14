@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Contact\StoreRequest;
+use App\Http\Requests\Api\V1\Contact\UpdateRequest;
 use App\Http\Resources\Api\V1\ContactResource;
 use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
@@ -52,9 +53,19 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, string $uuid)
     {
-        //
+
+        $contact = Contact::query()
+            ->where('uuid', $uuid)
+            ->firstOrFail();
+
+        $contact->update($request->validated());
+
+
+        return response()->json([
+            'data' => new ContactResource($contact->refresh())
+        ], HttpResponse::HTTP_OK);
     }
 
     /**

@@ -121,11 +121,20 @@ it('can show a sigle contact', function () {
 //         'phone' => $string,
 //         'pronouns' => PronounsEnum::random(),
 //     ];
+    $contact = Contact::factory()->create();
 
-//     $response = postJson(
-//         route('api.contact.store', ['uuid' => $contact->uuid]),
-//         $data
-//     );
+    $data = [
+        'title' => fake()->title,
+        'first_name' => fake()->name,
+        'middle_name' => fake()->name,
+        'last_name' => fake()->name,
+        'preferred_name' => fake()->name . " GG",
+        'email' => fake()->email,
+        'phone' => fake()->phoneNumber,
+        'pronouns' => PronounsEnum::random(),
+    ];
 
-//     $response->assertOk();
-// });
+    actingAs(User::factory()->create())
+        ->putJson(route('api.contact.update', ['uuid' => $contact->uuid]), $data)
+        ->assertOk();
+});

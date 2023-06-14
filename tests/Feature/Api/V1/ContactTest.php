@@ -33,12 +33,28 @@ it('can show a list of contacts for a user', function () {
         });
 });
 
-it('can create an new contact', function () {
+it('receives a 401 on create when not logged in', function (string $string) {
+    $data = [
+        'title' => $string,
+        'first_name' => $string,
+        'middle_name' => $string,
+        'last_name' => $string,
+        'preferred_name' => $string,
+        'email' => $string . '@gmail.com',
+        'phone' => $string,
+        'pronouns' => PronounsEnum::random(),
+    ];
+
+    $response = postJson(route('api.contact.store'), $data);
+
+    $response->assertUnauthorized();
+})->with('strings');
+
+it('can create an new contact', function (string $string) {
 
     auth()->loginUsingId(User::factory()->create()->id);
 
     expect(Contact::query()->count())->toEqual(0);
-    $string = 'Alpet';
     $data = [
         'title' => $string,
         // 'name' => [
@@ -72,8 +88,7 @@ it('can create an new contact', function () {
         });
 
     expect(Contact::query()->count())->toEqual(1);
-});
-
+})->with('strings');
 
 // it('can update the contact', function () {
 

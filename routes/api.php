@@ -23,11 +23,9 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-
-if (!app()->runningUnitTests()) {
+if (! app()->runningUnitTests()) {
     auth()->loginUsingId(User::factory()->create()->id);
 }
-
 
 Route::group([
     'prefix' => 'contact',
@@ -35,10 +33,10 @@ Route::group([
     'controller' => ContactController::class,
     'middleware' => ['auth:sanctum'],
 ], function () {
-    Route::get('/index', 'index')->name('index');
-    Route::post('/store', 'store')->name('store');
-    Route::put('/update/{uuid}', 'update')->name('update');
-    Route::get('/{uuid}', 'show')->name('show');
+    Route::get('index', 'index')->name('index');
+    Route::post('store', 'store')->name('store');
+    Route::put('update/{uuid}', 'update')->name('update');
+    Route::get('{uuid}', 'show')->name('show');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

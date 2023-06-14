@@ -8,9 +8,7 @@ use App\Http\Requests\Api\V1\Contact\UpdateRequest;
 use App\Http\Resources\Api\V1\ContactResource;
 use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
-use Illuminate\Mail\Mailables\Content;
 
 class ContactController extends Controller
 {
@@ -22,7 +20,7 @@ class ContactController extends Controller
         $contact = Contact::paginate(15);
 
         return response()->json([
-            'data' => ContactResource::collection($contact)
+            'data' => ContactResource::collection($contact),
         ], HttpResponse::HTTP_OK);
     }
 
@@ -34,7 +32,7 @@ class ContactController extends Controller
         $contact = Contact::create($request->validated());
 
         return response()->json([
-            'data' => new ContactResource($contact)
+            'data' => new ContactResource($contact),
         ], HttpResponse::HTTP_CREATED);
     }
 
@@ -46,7 +44,7 @@ class ContactController extends Controller
         $contact = Contact::where('uuid', $uuid)->firstOrFail();
 
         return response()->json([
-            'data' => new ContactResource($contact)
+            'data' => new ContactResource($contact),
         ], HttpResponse::HTTP_OK);
     }
 
@@ -62,9 +60,8 @@ class ContactController extends Controller
 
         $contact->update($request->validated());
 
-
         return response()->json([
-            'data' => new ContactResource($contact->refresh())
+            'data' => new ContactResource($contact->refresh()),
         ], HttpResponse::HTTP_OK);
     }
 

@@ -18,9 +18,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/';
 
-    /**
-     * @return void
-     */
     public function boot(): void
     {
         $this->configureRateLimiting();
@@ -42,7 +39,6 @@ class RouteServiceProvider extends ServiceProvider
                 //     ->prefix('api/v2')
                 //     ->group(base_path('routes/api2.php'));
 
-
                 Route::middleware('web')
                     ->domain($domain)
                     ->group(base_path('routes/web.php'));
@@ -50,25 +46,19 @@ class RouteServiceProvider extends ServiceProvider
         });
     }
 
-    /**
-     * @return array
-     */
     protected function centralDomains(): array
     {
         $domains = config('tenancy.central_domains');
 
-        if (!is_array($domains)) {
+        if (! is_array($domains)) {
             throw new RuntimeException(
-                message: "Tenanct Central Domains should be an array",
+                message: 'Tenanct Central Domains should be an array',
             );
         }
 
         return (array) $domains;
     }
 
-    /**
-     * @return void
-     */
     protected function configureRateLimiting(): void
     {
         RateLimiter::for(

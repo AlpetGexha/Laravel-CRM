@@ -8,13 +8,21 @@ use Spatie\Enum\Laravel\Enum;
 final class PronounsEnum extends Enum
 {
     protected static string $ae_aer = 'ae/aer';
+
     protected static string $e_em = 'e/em';
+
     protected static string $he_him = 'he/him';
+
     protected static string $per_per = 'per/per';
+
     protected static string $she_her = 'she/her';
+
     protected static string $they_them = 'they/them';
+
     protected static string $ve_ver = 've/ver';
+
     protected static string $xe_xem = 'xe_xem';
+
     protected static string $ze_hir = 'ze_hir';
 
     /**

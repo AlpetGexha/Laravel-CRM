@@ -37,6 +37,7 @@ Route::group([
     Route::post('store', 'store')->name('store');
     Route::put('update/{uuid}', 'update')->name('update');
     Route::get('{uuid}', 'show')->name('show');
+    Route::delete('{uuid}', 'delete')->name('delete');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

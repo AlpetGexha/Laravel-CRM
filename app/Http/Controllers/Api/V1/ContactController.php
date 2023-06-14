@@ -68,8 +68,13 @@ class ContactController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function delete(string $uuid)
     {
-        //
+        Contact::query()
+            ->where('uuid', $uuid)
+            ->firstOrFail()
+            ->deleteOrFail();
+
+        return response()->noContent();
     }
 }

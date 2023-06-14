@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Testing\Fluent\AssertableJson;
 
+use function Pest\Laravel\actingAs;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
 
@@ -89,6 +90,18 @@ it('can create an new contact', function (string $string) {
 
     expect(Contact::query()->count())->toEqual(1);
 })->with('strings');
+
+
+it('can show a sigle contact', function () {
+
+    auth()->loginUsingId(User::factory()->create()->id);
+
+    $contact = Contact::factory()->create();
+
+    $response = getJson(route('api.contact.show', ['uuid' => $contact->uuid]));
+
+    $response->assertOk();
+});
 
 // it('can update the contact', function () {
 

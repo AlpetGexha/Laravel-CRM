@@ -23,7 +23,11 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-// auth()->loginUsingId(User::factory()->create()->id);
+
+if (!app()->runningUnitTests()) {
+    auth()->loginUsingId(User::factory()->create()->id);
+}
+
 
 Route::group([
     'prefix' => 'contact',
@@ -33,7 +37,8 @@ Route::group([
 ], function () {
     Route::get('/index', 'index')->name('index');
     Route::post('/store', 'store')->name('store');
-    Route::put('/update/{Contact:uuid}', 'update')->name('update');
+    // Route::put('/update/{Contact:uuid}', 'update')->name('update');
+    Route::get('/{uuid}', 'show')->name('show');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

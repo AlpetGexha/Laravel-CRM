@@ -9,6 +9,7 @@ use App\Models\Contact;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response as HttpResponse;
+use Illuminate\Mail\Mailables\Content;
 
 class ContactController extends Controller
 {
@@ -39,9 +40,13 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $uuid)
     {
-        //
+        $contact = Contact::where('uuid', $uuid)->firstOrFail();
+
+        return response()->json([
+            'data' => new ContactResource($contact)
+        ], HttpResponse::HTTP_OK);
     }
 
     /**

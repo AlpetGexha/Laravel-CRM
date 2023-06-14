@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,8 +21,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        Contact::factory(100)->create();
+
         $this->call([
-            ShieldSeeder::class,
+            // ShieldSeeder::class,
         ]);
     }
 }

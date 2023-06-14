@@ -17,7 +17,15 @@ class ContactFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'uuid' => $this->faker->uuid,
+            'title' => $this->faker->title,
+            'first_name' => $this->faker->firstName,
+            'middle_name' => $this->faker->firstName,
+            'last_name' => $this->faker->lastName,
+            'preferred_name' => $this->faker->firstName,
+            'email' => $this->faker->email,
+            'phone' => $this->faker->phoneNumber,
+            'pronouns' => $this->faker->word,
         ];
     }
 }

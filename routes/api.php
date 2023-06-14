@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('ping', function () {
     return response()->json([
-        'data' => 'pong',
+        'ack' => 'pong',
     ], Response::HTTP_OK);
 });
 

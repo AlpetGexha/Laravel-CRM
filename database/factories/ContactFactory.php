@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\PronounsEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,7 +26,7 @@ class ContactFactory extends Factory
             'preferred_name' => $this->faker->firstName,
             'email' => $this->faker->email,
             'phone' => $this->faker->phoneNumber,
-            'pronouns' => $this->faker->word,
+            'pronouns' => $this->faker->randomElement(PronounsEnum::all()),
         ];
     }
 }

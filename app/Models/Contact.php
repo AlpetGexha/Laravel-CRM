@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PronounsEnum;
 use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +15,10 @@ class Contact extends Model
 
     protected $fillable = [
         'uuid', 'title', 'first_name', 'middle_name', 'last_name', 'preferred_name', 'email', 'phone', 'pronouns',
+    ];
+
+    protected $casts = [
+        // 'pronouns' => PronounsEnum::class
     ];
 
     public function interactions(): HasMany

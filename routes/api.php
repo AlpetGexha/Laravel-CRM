@@ -31,8 +31,9 @@ Route::group([
     'controller' => ContactController::class,
     'middleware' => ['auth:sanctum'],
 ], function () {
-
     Route::get('/index', 'index')->name('index');
+    Route::post('/store', 'store')->name('store');
+    Route::put('/update/{Contact:uuid}', 'update')->name('update');
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

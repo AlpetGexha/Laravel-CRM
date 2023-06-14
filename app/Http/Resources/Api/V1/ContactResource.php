@@ -25,9 +25,9 @@ class ContactResource extends JsonResource
                 'preferred' => $this->preferred_name,
                 'full' => $this->fullName(),
             ],
+            'pronouns' => $this->pronouns,
             'email' => $this->email,
             'phone' => $this->phone,
-            // 'pronouns' => $this->pronouns,
             // 'created_at' => $this->created_at,
         ];
     }

@@ -73,7 +73,7 @@ class InteractionController extends Controller
             ->update($request->validated());
 
         return response()->json([
-            'data' =>  InteractionResource::collection($interaction),
+            'data' => InteractionResource::collection($interaction),
         ], HttpResponse::HTTP_OK);
     }
 

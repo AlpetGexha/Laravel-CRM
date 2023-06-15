@@ -3,10 +3,8 @@
 use App\Enums\InteractionTypeEnum;
 use App\Models\Contact;
 use App\Models\Interaction;
-use App\Models\Project;
 use App\Models\User;
 use Illuminate\Testing\Fluent\AssertableJson;
-use PhpParser\Node\Stmt\Use_;
 
 use function Pest\Laravel\actingAs;
 
@@ -23,7 +21,6 @@ it('can user show Interaction', function () {
         ->assertOk()
         ->assertJsonCount(10, 'data');
 });
-
 
 it('can create a new interaction', function () {
     expect(Interaction::count())->toEqual(0);
@@ -61,13 +58,11 @@ it('can show a interaction', function () {
         });
 });
 
-
 it('throws a Not Found status when passing an incorrect UUID', function (string $uuid) {
     actingAs(User::factory()->create())
         ->getJson(route('api.interactions.show', $uuid))
         ->assertNotFound();
 })->with('uuids');
-
 
 it('can delete an interaction', function () {
     $interaction = Interaction::factory()->create();
@@ -79,4 +74,3 @@ it('can delete an interaction', function () {
 
     // expect(Interaction::query()->count())->toEqual(0);
 });
-

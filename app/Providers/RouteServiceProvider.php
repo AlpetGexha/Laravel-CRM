@@ -24,7 +24,6 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->routes(function () {
             foreach ($this->centralDomains() as $domain) {
-
                 Route::middleware([
                     'api', 'api_version:v1',
                     // InitializeTenancyByDomain::class,

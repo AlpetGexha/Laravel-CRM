@@ -12,9 +12,7 @@ class ShieldSeeder extends Seeder
     public static function makeDirectPermissions(string $directPermissions): void
     {
         if (! blank($permissions = json_decode($directPermissions, true))) {
-
             foreach ($permissions as $permission) {
-
                 if (Utils::getPermissionModel()::whereName($permission)->doesntExist()) {
                     Utils::getPermissionModel()::create([
                         'name' => $permission['name'],
@@ -28,7 +26,6 @@ class ShieldSeeder extends Seeder
     protected static function makeRolesWithPermissions(string $rolesWithPermissions): void
     {
         if (! blank($rolePlusPermissions = json_decode($rolesWithPermissions, true))) {
-
             foreach ($rolePlusPermissions as $rolePlusPermission) {
                 $role = Utils::getRoleModel()::firstOrCreate([
                     'name' => $rolePlusPermission['name'],
@@ -36,7 +33,6 @@ class ShieldSeeder extends Seeder
                 ]);
 
                 if (! blank($rolePlusPermission['permissions'])) {
-
                     $permissionModels = collect();
 
                     collect($rolePlusPermission['permissions'])

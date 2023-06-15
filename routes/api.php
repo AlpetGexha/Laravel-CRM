@@ -30,7 +30,6 @@ if (!app()->runningUnitTests()) {
 }
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
-
     // Contact
     Route::group([
         'prefix' => 'contact', 'as' => 'contact.',

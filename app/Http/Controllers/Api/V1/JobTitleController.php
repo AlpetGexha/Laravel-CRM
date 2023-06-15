@@ -7,7 +7,6 @@ use App\Http\Requests\Api\V1\JobTitle\StoreRequest;
 use App\Http\Resources\Api\V1\JobTitleResource;
 use App\Models\JobTitle;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class JobTitleController extends Controller

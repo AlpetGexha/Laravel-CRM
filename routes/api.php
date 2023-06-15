@@ -25,7 +25,7 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-if (!app()->runningUnitTests()) {
+if (! app()->runningUnitTests()) {
     auth()->loginUsingId(User::factory()->create()->id);
 }
 

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\ContactController;
 use App\Http\Controllers\Api\V1\InteractionController;
+use App\Http\Controllers\Api\V1\JobTitleController;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +25,7 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-if (! app()->runningUnitTests()) {
+if (!app()->runningUnitTests()) {
     auth()->loginUsingId(User::factory()->create()->id);
 }
 
@@ -52,4 +54,23 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('{uuid}', 'show')->name('show');
         Route::delete('{uuid}', 'delete')->name('delete');
     });
+
+    // Company
+    Route::group([
+        'prefix' => 'company', 'as' => 'company.',
+        'controller' => CompanyController::class,
+    ], function () {
+        Route::get('index', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::put('update/{uuid}', 'update')->name('update');
+        Route::get('{uuid}', 'show')->name('show');
+        Route::delete('{uuid}', 'delete')->name('delete');
+    });
+
+    // Job Title
+    Route::group(['prefix' => 'jobtitle', 'as' => 'jobtitle.'], function () {
+        Route::apiResource('jobtitle', JobTitleController::class);
+    });
+
+    //
 });

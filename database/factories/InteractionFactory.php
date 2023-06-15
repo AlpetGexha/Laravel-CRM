@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Enums\InteractionTypeEnum;
+use App\Models\Project;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +20,12 @@ class InteractionFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'uuid' => $this->faker->uuid,
+            'type' => $this->faker->randomElement(InteractionTypeEnum::all()),
+            'content' => $this->faker->paragraph,
+            'user_id' => User::factory(),
+            'contact_id' => \App\Models\Contact::factory(),
+            'project_id' => Project::factory(),
         ];
     }
 }

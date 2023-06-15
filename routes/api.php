@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\V1\ContactController;
+use App\Http\Controllers\Api\V1\InteractionController;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
@@ -27,19 +27,29 @@ if (! app()->runningUnitTests()) {
     auth()->loginUsingId(User::factory()->create()->id);
 }
 
-Route::group([
-    'prefix' => 'contact',
-    'as' => 'contact.',
-    'controller' => ContactController::class,
-    'middleware' => ['auth:sanctum'],
-], function () {
-    Route::get('index', 'index')->name('index');
-    Route::post('store', 'store')->name('store');
-    Route::put('update/{uuid}', 'update')->name('update');
-    Route::get('{uuid}', 'show')->name('show');
-    Route::delete('{uuid}', 'delete')->name('delete');
-});
+Route::group(['middleware' => ['auth:sanctum']], function () {
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+    // Contact
+    Route::group([
+        'prefix' => 'contact', 'as' => 'contact.',
+        'controller' => ContactController::class,
+    ], function () {
+        Route::get('index', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::put('update/{uuid}', 'update')->name('update');
+        Route::get('{uuid}', 'show')->name('show');
+        Route::delete('{uuid}', 'delete')->name('delete');
+    });
+
+    // Interaction
+    Route::group([
+        'prefix' => 'interaction', 'as' => 'interaction.',
+        'controller' => InteractionController::class,
+    ], function () {
+        Route::get('index', 'index')->name('index');
+        Route::post('store', 'store')->name('store');
+        Route::put('update/{uuid}', 'update')->name('update');
+        Route::get('{uuid}', 'show')->name('show');
+        Route::delete('{uuid}', 'delete')->name('delete');
+    });
 });

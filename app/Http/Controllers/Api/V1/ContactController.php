@@ -53,7 +53,6 @@ class ContactController extends Controller
      */
     public function update(UpdateRequest $request, string $uuid)
     {
-
         $contact = Contact::query()
             ->where('uuid', $uuid)
             ->firstOrFail();

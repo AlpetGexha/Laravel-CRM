@@ -31,7 +31,6 @@ it('can show a list of contacts for a user', function () {
 });
 
 it('receives a 401 on create when not logged in', function (string $string) {
-
     $response = postJson(route('api.contact.store'), data($string));
 
     $response->assertUnauthorized();

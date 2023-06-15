@@ -9,7 +9,6 @@ use Illuminate\Testing\Fluent\AssertableJson;
 use function Pest\Laravel\actingAs;
 
 it('can user show Interaction', function () {
-
     $user = User::factory()->create();
 
     Interaction::factory(10)->create([

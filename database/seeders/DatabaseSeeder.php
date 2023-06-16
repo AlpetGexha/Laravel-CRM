@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             // ShieldSeeder::class,
         ]);
+        $this->call(PermissionsTableSeeder::class);
     }
 }

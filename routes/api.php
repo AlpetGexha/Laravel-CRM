@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\ContactController;
 use App\Http\Controllers\Api\V1\InteractionController;
 use App\Http\Controllers\Api\V1\JobTitleController;
+use App\Models\Contact;
+use App\Models\Interaction;
 use App\Models\User;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +27,9 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-if (! app()->runningUnitTests()) {
-    auth()->loginUsingId(User::factory()->create()->id);
+if (!app()->runningUnitTests()) {
+    // login as super_admin
+    auth()->login(User::factory()->create()->assignRole('super_admin'));
 }
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -39,7 +42,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('store', 'store')->name('store');
         Route::put('update/{uuid}', 'update')->name('update');
         Route::get('{uuid}', 'show')->name('show');
-        Route::delete('{uuid}', 'delete')->name('delete');
+        Route::delete('{uuid}', 'delete')->name('delete')->can('delete', Contact::class);
     });
 
     // Interaction
@@ -51,7 +54,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('store', 'store')->name('store');
         Route::put('update/{uuid}', 'update')->name('update');
         Route::get('{uuid}', 'show')->name('show');
-        Route::delete('{uuid}', 'delete')->name('delete');
+        Route::delete('{uuid}', 'delete')->name('delete')->can('delete', Interaction::class);
     });
 
     // Company
@@ -63,7 +66,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('store', 'store')->name('store');
         Route::put('update/{uuid}', 'update')->name('update');
         Route::get('{uuid}', 'show')->name('show');
-        Route::delete('{uuid}', 'delete')->name('delete');
+        Route::delete('{uuid}', 'delete')->name('delete')->can('delete', 'App\\Models\Company');
     });
 
     // Job Title

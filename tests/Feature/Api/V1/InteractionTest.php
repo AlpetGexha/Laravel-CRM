@@ -5,7 +5,6 @@ use App\Models\Contact;
 use App\Models\Interaction;
 use App\Models\User;
 use Illuminate\Testing\Fluent\AssertableJson;
-
 use function Pest\Laravel\actingAs;
 
 it('can user show Interaction', function () {

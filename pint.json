@@ -1,0 +1,22 @@
+{
+    "preset": "laravel",
+    "rules": {
+        "simplified_null_return": true,
+        "braces": true,
+        "new_with_braces": {
+            "anonymous_class": true,
+            "named_class": true
+        },
+        "align_multiline_comment": true,
+        "array_indentation":true,
+        "array_syntax": true,
+        "blank_line_after_namespace":true,
+        "combine_consecutive_issets":true,
+        "combine_consecutive_unsets":true,
+        "concat_space": true,
+        "explicit_string_variable":true,
+        "fully_qualified_strict_types": true,
+        "function_typehint_space": true
+
+    }
+}

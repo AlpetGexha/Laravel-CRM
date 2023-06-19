@@ -27,7 +27,7 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-if (!app()->runningUnitTests()) {
+if (! app()->runningUnitTests()) {
     // login as super_admin
     auth()->login(User::factory()->create()->assignRole('super_admin'));
 }

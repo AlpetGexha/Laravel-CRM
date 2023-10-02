@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\V1\CompanyController;
 use App\Http\Controllers\Api\V1\ContactController;
 use App\Http\Controllers\Api\V1\InteractionController;
 use App\Http\Controllers\Api\V1\JobTitleController;
+use App\Http\Controllers\Api\V1\ProjectController;
 use App\Models\Contact;
 use App\Models\Interaction;
 use App\Models\User;
@@ -27,9 +28,9 @@ Route::get('ping', function () {
     ], Response::HTTP_OK);
 });
 
-if (! app()->runningUnitTests()) {
+if (!app()->runningUnitTests()) {
     // login as super_admin
-    auth()->login(User::factory()->create()->assignRole('super_admin'));
+    // auth()->login(User::factory()->create()->assignRole('super_admin'));
 }
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -69,6 +70,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::delete('{uuid}', 'delete')->name('delete')->can('delete', 'App\\Models\Company');
     });
 
+
+    // Project
+    Route::group([
+        'prefix' => 'project', 'as' => 'project.',
+        'controller' => ProjectController::class,
+    ], function () {
+        Route::get('index', 'index')->name('index');
+        Route::post('store', 'store')->name('store')->can('create', 'App\\Models\Project');
+        Route::put('update/{uuid}', 'update')->name('update');
+        Route::get('{uuid}', 'show')->name('show');
+        Route::delete('{uuid}', 'delete')->name('delete')->can('delete', 'App\\Models\Project');
+    });
     // Job Title
     Route::group(['prefix' => 'jobtitle', 'as' => 'jobtitle.'], function () {
         Route::apiResource('jobtitle', JobTitleController::class);

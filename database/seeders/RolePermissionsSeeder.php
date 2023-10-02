@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PermissionsTableSeeder extends Seeder
 {
-
     /**
      * Auto generated seed file
      *
@@ -14,1309 +14,1162 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::table('permissions')->delete();
 
-        \DB::table('permissions')->delete();
-        
-        \DB::table('permissions')->insert(array (
-            0 => 
-            array (
+        DB::table('permissions')->insert([
+            0 => [
                 'id' => 1,
                 'name' => 'view_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            1 => 
-            array (
+            ],
+            1 => [
                 'id' => 2,
                 'name' => 'view_any_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            2 => 
-            array (
+            ],
+            2 => [
                 'id' => 3,
                 'name' => 'create_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            3 => 
-            array (
+            ],
+            3 => [
                 'id' => 4,
                 'name' => 'update_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            4 => 
-            array (
+            ],
+            4 => [
                 'id' => 5,
                 'name' => 'restore_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            5 => 
-            array (
+            ],
+            5 => [
                 'id' => 6,
                 'name' => 'restore_any_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            6 => 
-            array (
+            ],
+            6 => [
                 'id' => 7,
                 'name' => 'replicate_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            7 => 
-            array (
+            ],
+            7 => [
                 'id' => 8,
                 'name' => 'reorder_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            8 => 
-            array (
+            ],
+            8 => [
                 'id' => 9,
                 'name' => 'delete_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            9 => 
-            array (
+            ],
+            9 => [
                 'id' => 10,
                 'name' => 'delete_any_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            10 => 
-            array (
+            ],
+            10 => [
                 'id' => 11,
                 'name' => 'force_delete_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            11 => 
-            array (
+            ],
+            11 => [
                 'id' => 12,
                 'name' => 'force_delete_any_client',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            12 => 
-            array (
+            ],
+            12 => [
                 'id' => 13,
                 'name' => 'view_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            13 => 
-            array (
+            ],
+            13 => [
                 'id' => 14,
                 'name' => 'view_any_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            14 => 
-            array (
+            ],
+            14 => [
                 'id' => 15,
                 'name' => 'create_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            15 => 
-            array (
+            ],
+            15 => [
                 'id' => 16,
                 'name' => 'update_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            16 => 
-            array (
+            ],
+            16 => [
                 'id' => 17,
                 'name' => 'restore_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            17 => 
-            array (
+            ],
+            17 => [
                 'id' => 18,
                 'name' => 'restore_any_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            18 => 
-            array (
+            ],
+            18 => [
                 'id' => 19,
                 'name' => 'replicate_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            19 => 
-            array (
+            ],
+            19 => [
                 'id' => 20,
                 'name' => 'reorder_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            20 => 
-            array (
+            ],
+            20 => [
                 'id' => 21,
                 'name' => 'delete_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            21 => 
-            array (
+            ],
+            21 => [
                 'id' => 22,
                 'name' => 'delete_any_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            22 => 
-            array (
+            ],
+            22 => [
                 'id' => 23,
                 'name' => 'force_delete_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            23 => 
-            array (
+            ],
+            23 => [
                 'id' => 24,
                 'name' => 'force_delete_any_company',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            24 => 
-            array (
+            ],
+            24 => [
                 'id' => 25,
                 'name' => 'view_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            25 => 
-            array (
+            ],
+            25 => [
                 'id' => 26,
                 'name' => 'view_any_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            26 => 
-            array (
+            ],
+            26 => [
                 'id' => 27,
                 'name' => 'create_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            27 => 
-            array (
+            ],
+            27 => [
                 'id' => 28,
                 'name' => 'update_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            28 => 
-            array (
+            ],
+            28 => [
                 'id' => 29,
                 'name' => 'restore_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            29 => 
-            array (
+            ],
+            29 => [
                 'id' => 30,
                 'name' => 'restore_any_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            30 => 
-            array (
+            ],
+            30 => [
                 'id' => 31,
                 'name' => 'replicate_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            31 => 
-            array (
+            ],
+            31 => [
                 'id' => 32,
                 'name' => 'reorder_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            32 => 
-            array (
+            ],
+            32 => [
                 'id' => 33,
                 'name' => 'delete_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            33 => 
-            array (
+            ],
+            33 => [
                 'id' => 34,
                 'name' => 'delete_any_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            34 => 
-            array (
+            ],
+            34 => [
                 'id' => 35,
                 'name' => 'force_delete_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            35 => 
-            array (
+            ],
+            35 => [
                 'id' => 36,
                 'name' => 'force_delete_any_contact',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            36 => 
-            array (
+            ],
+            36 => [
                 'id' => 37,
                 'name' => 'view_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            37 => 
-            array (
+            ],
+            37 => [
                 'id' => 38,
                 'name' => 'view_any_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            38 => 
-            array (
+            ],
+            38 => [
                 'id' => 39,
                 'name' => 'create_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            39 => 
-            array (
+            ],
+            39 => [
                 'id' => 40,
                 'name' => 'update_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            40 => 
-            array (
+            ],
+            40 => [
                 'id' => 41,
                 'name' => 'restore_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            41 => 
-            array (
+            ],
+            41 => [
                 'id' => 42,
                 'name' => 'restore_any_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            42 => 
-            array (
+            ],
+            42 => [
                 'id' => 43,
                 'name' => 'replicate_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            43 => 
-            array (
+            ],
+            43 => [
                 'id' => 44,
                 'name' => 'reorder_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            44 => 
-            array (
+            ],
+            44 => [
                 'id' => 45,
                 'name' => 'delete_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            45 => 
-            array (
+            ],
+            45 => [
                 'id' => 46,
                 'name' => 'delete_any_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            46 => 
-            array (
+            ],
+            46 => [
                 'id' => 47,
                 'name' => 'force_delete_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            47 => 
-            array (
+            ],
+            47 => [
                 'id' => 48,
                 'name' => 'force_delete_any_contact::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            48 => 
-            array (
+            ],
+            48 => [
                 'id' => 49,
                 'name' => 'view_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            49 => 
-            array (
+            ],
+            49 => [
                 'id' => 50,
                 'name' => 'view_any_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            50 => 
-            array (
+            ],
+            50 => [
                 'id' => 51,
                 'name' => 'create_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            51 => 
-            array (
+            ],
+            51 => [
                 'id' => 52,
                 'name' => 'update_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            52 => 
-            array (
+            ],
+            52 => [
                 'id' => 53,
                 'name' => 'restore_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            53 => 
-            array (
+            ],
+            53 => [
                 'id' => 54,
                 'name' => 'restore_any_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            54 => 
-            array (
+            ],
+            54 => [
                 'id' => 55,
                 'name' => 'replicate_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            55 => 
-            array (
+            ],
+            55 => [
                 'id' => 56,
                 'name' => 'reorder_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            56 => 
-            array (
+            ],
+            56 => [
                 'id' => 57,
                 'name' => 'delete_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            57 => 
-            array (
+            ],
+            57 => [
                 'id' => 58,
                 'name' => 'delete_any_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            58 => 
-            array (
+            ],
+            58 => [
                 'id' => 59,
                 'name' => 'force_delete_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            59 => 
-            array (
+            ],
+            59 => [
                 'id' => 60,
                 'name' => 'force_delete_any_department',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:00',
                 'updated_at' => '2023-06-16 00:14:00',
-            ),
-            60 => 
-            array (
+            ],
+            60 => [
                 'id' => 61,
                 'name' => 'view_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            61 => 
-            array (
+            ],
+            61 => [
                 'id' => 62,
                 'name' => 'view_any_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            62 => 
-            array (
+            ],
+            62 => [
                 'id' => 63,
                 'name' => 'create_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            63 => 
-            array (
+            ],
+            63 => [
                 'id' => 64,
                 'name' => 'update_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            64 => 
-            array (
+            ],
+            64 => [
                 'id' => 65,
                 'name' => 'restore_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            65 => 
-            array (
+            ],
+            65 => [
                 'id' => 66,
                 'name' => 'restore_any_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            66 => 
-            array (
+            ],
+            66 => [
                 'id' => 67,
                 'name' => 'replicate_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            67 => 
-            array (
+            ],
+            67 => [
                 'id' => 68,
                 'name' => 'reorder_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            68 => 
-            array (
+            ],
+            68 => [
                 'id' => 69,
                 'name' => 'delete_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            69 => 
-            array (
+            ],
+            69 => [
                 'id' => 70,
                 'name' => 'delete_any_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            70 => 
-            array (
+            ],
+            70 => [
                 'id' => 71,
                 'name' => 'force_delete_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            71 => 
-            array (
+            ],
+            71 => [
                 'id' => 72,
                 'name' => 'force_delete_any_interaction',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            72 => 
-            array (
+            ],
+            72 => [
                 'id' => 73,
                 'name' => 'view_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            73 => 
-            array (
+            ],
+            73 => [
                 'id' => 74,
                 'name' => 'view_any_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            74 => 
-            array (
+            ],
+            74 => [
                 'id' => 75,
                 'name' => 'create_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            75 => 
-            array (
+            ],
+            75 => [
                 'id' => 76,
                 'name' => 'update_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            76 => 
-            array (
+            ],
+            76 => [
                 'id' => 77,
                 'name' => 'restore_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            77 => 
-            array (
+            ],
+            77 => [
                 'id' => 78,
                 'name' => 'restore_any_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            78 => 
-            array (
+            ],
+            78 => [
                 'id' => 79,
                 'name' => 'replicate_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            79 => 
-            array (
+            ],
+            79 => [
                 'id' => 80,
                 'name' => 'reorder_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            80 => 
-            array (
+            ],
+            80 => [
                 'id' => 81,
                 'name' => 'delete_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            81 => 
-            array (
+            ],
+            81 => [
                 'id' => 82,
                 'name' => 'delete_any_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            82 => 
-            array (
+            ],
+            82 => [
                 'id' => 83,
                 'name' => 'force_delete_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            83 => 
-            array (
+            ],
+            83 => [
                 'id' => 84,
                 'name' => 'force_delete_any_interaction::stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            84 => 
-            array (
+            ],
+            84 => [
                 'id' => 85,
                 'name' => 'view_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            85 => 
-            array (
+            ],
+            85 => [
                 'id' => 86,
                 'name' => 'view_any_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            86 => 
-            array (
+            ],
+            86 => [
                 'id' => 87,
                 'name' => 'create_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            87 => 
-            array (
+            ],
+            87 => [
                 'id' => 88,
                 'name' => 'update_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            88 => 
-            array (
+            ],
+            88 => [
                 'id' => 89,
                 'name' => 'restore_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            89 => 
-            array (
+            ],
+            89 => [
                 'id' => 90,
                 'name' => 'restore_any_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            90 => 
-            array (
+            ],
+            90 => [
                 'id' => 91,
                 'name' => 'replicate_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            91 => 
-            array (
+            ],
+            91 => [
                 'id' => 92,
                 'name' => 'reorder_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            92 => 
-            array (
+            ],
+            92 => [
                 'id' => 93,
                 'name' => 'delete_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            93 => 
-            array (
+            ],
+            93 => [
                 'id' => 94,
                 'name' => 'delete_any_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            94 => 
-            array (
+            ],
+            94 => [
                 'id' => 95,
                 'name' => 'force_delete_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            95 => 
-            array (
+            ],
+            95 => [
                 'id' => 96,
                 'name' => 'force_delete_any_job::title',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            96 => 
-            array (
+            ],
+            96 => [
                 'id' => 97,
                 'name' => 'view_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            97 => 
-            array (
+            ],
+            97 => [
                 'id' => 98,
                 'name' => 'view_any_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            98 => 
-            array (
+            ],
+            98 => [
                 'id' => 99,
                 'name' => 'create_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            99 => 
-            array (
+            ],
+            99 => [
                 'id' => 100,
                 'name' => 'update_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            100 => 
-            array (
+            ],
+            100 => [
                 'id' => 101,
                 'name' => 'restore_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            101 => 
-            array (
+            ],
+            101 => [
                 'id' => 102,
                 'name' => 'restore_any_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            102 => 
-            array (
+            ],
+            102 => [
                 'id' => 103,
                 'name' => 'replicate_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            103 => 
-            array (
+            ],
+            103 => [
                 'id' => 104,
                 'name' => 'reorder_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            104 => 
-            array (
+            ],
+            104 => [
                 'id' => 105,
                 'name' => 'delete_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            105 => 
-            array (
+            ],
+            105 => [
                 'id' => 106,
                 'name' => 'delete_any_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            106 => 
-            array (
+            ],
+            106 => [
                 'id' => 107,
                 'name' => 'force_delete_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            107 => 
-            array (
+            ],
+            107 => [
                 'id' => 108,
                 'name' => 'force_delete_any_project',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            108 => 
-            array (
+            ],
+            108 => [
                 'id' => 109,
                 'name' => 'view_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            109 => 
-            array (
+            ],
+            109 => [
                 'id' => 110,
                 'name' => 'view_any_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            110 => 
-            array (
+            ],
+            110 => [
                 'id' => 111,
                 'name' => 'create_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            111 => 
-            array (
+            ],
+            111 => [
                 'id' => 112,
                 'name' => 'update_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            112 => 
-            array (
+            ],
+            112 => [
                 'id' => 113,
                 'name' => 'delete_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            113 => 
-            array (
+            ],
+            113 => [
                 'id' => 114,
                 'name' => 'delete_any_role',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            114 => 
-            array (
+            ],
+            114 => [
                 'id' => 115,
                 'name' => 'view_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            115 => 
-            array (
+            ],
+            115 => [
                 'id' => 116,
                 'name' => 'view_any_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            116 => 
-            array (
+            ],
+            116 => [
                 'id' => 117,
                 'name' => 'create_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            117 => 
-            array (
+            ],
+            117 => [
                 'id' => 118,
                 'name' => 'update_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            118 => 
-            array (
+            ],
+            118 => [
                 'id' => 119,
                 'name' => 'restore_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            119 => 
-            array (
+            ],
+            119 => [
                 'id' => 120,
                 'name' => 'restore_any_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            120 => 
-            array (
+            ],
+            120 => [
                 'id' => 121,
                 'name' => 'replicate_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            121 => 
-            array (
+            ],
+            121 => [
                 'id' => 122,
                 'name' => 'reorder_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            122 => 
-            array (
+            ],
+            122 => [
                 'id' => 123,
                 'name' => 'delete_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            123 => 
-            array (
+            ],
+            123 => [
                 'id' => 124,
                 'name' => 'delete_any_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            124 => 
-            array (
+            ],
+            124 => [
                 'id' => 125,
                 'name' => 'force_delete_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            125 => 
-            array (
+            ],
+            125 => [
                 'id' => 126,
                 'name' => 'force_delete_any_stored::event',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            126 => 
-            array (
+            ],
+            126 => [
                 'id' => 127,
                 'name' => 'view_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            127 => 
-            array (
+            ],
+            127 => [
                 'id' => 128,
                 'name' => 'view_any_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            128 => 
-            array (
+            ],
+            128 => [
                 'id' => 129,
                 'name' => 'create_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            129 => 
-            array (
+            ],
+            129 => [
                 'id' => 130,
                 'name' => 'update_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            130 => 
-            array (
+            ],
+            130 => [
                 'id' => 131,
                 'name' => 'restore_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            131 => 
-            array (
+            ],
+            131 => [
                 'id' => 132,
                 'name' => 'restore_any_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            132 => 
-            array (
+            ],
+            132 => [
                 'id' => 133,
                 'name' => 'replicate_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            133 => 
-            array (
+            ],
+            133 => [
                 'id' => 134,
                 'name' => 'reorder_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            134 => 
-            array (
+            ],
+            134 => [
                 'id' => 135,
                 'name' => 'delete_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            135 => 
-            array (
+            ],
+            135 => [
                 'id' => 136,
                 'name' => 'delete_any_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            136 => 
-            array (
+            ],
+            136 => [
                 'id' => 137,
                 'name' => 'force_delete_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            137 => 
-            array (
+            ],
+            137 => [
                 'id' => 138,
                 'name' => 'force_delete_any_team',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:01',
                 'updated_at' => '2023-06-16 00:14:01',
-            ),
-            138 => 
-            array (
+            ],
+            138 => [
                 'id' => 139,
                 'name' => 'view_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            139 => 
-            array (
+            ],
+            139 => [
                 'id' => 140,
                 'name' => 'view_any_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            140 => 
-            array (
+            ],
+            140 => [
                 'id' => 141,
                 'name' => 'create_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            141 => 
-            array (
+            ],
+            141 => [
                 'id' => 142,
                 'name' => 'update_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            142 => 
-            array (
+            ],
+            142 => [
                 'id' => 143,
                 'name' => 'restore_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            143 => 
-            array (
+            ],
+            143 => [
                 'id' => 144,
                 'name' => 'restore_any_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            144 => 
-            array (
+            ],
+            144 => [
                 'id' => 145,
                 'name' => 'replicate_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            145 => 
-            array (
+            ],
+            145 => [
                 'id' => 146,
                 'name' => 'reorder_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            146 => 
-            array (
+            ],
+            146 => [
                 'id' => 147,
                 'name' => 'delete_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            147 => 
-            array (
+            ],
+            147 => [
                 'id' => 148,
                 'name' => 'delete_any_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            148 => 
-            array (
+            ],
+            148 => [
                 'id' => 149,
                 'name' => 'force_delete_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            149 => 
-            array (
+            ],
+            149 => [
                 'id' => 150,
                 'name' => 'force_delete_any_tenant',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            150 => 
-            array (
+            ],
+            150 => [
                 'id' => 151,
                 'name' => 'view_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            151 => 
-            array (
+            ],
+            151 => [
                 'id' => 152,
                 'name' => 'view_any_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            152 => 
-            array (
+            ],
+            152 => [
                 'id' => 153,
                 'name' => 'create_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            153 => 
-            array (
+            ],
+            153 => [
                 'id' => 154,
                 'name' => 'update_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            154 => 
-            array (
+            ],
+            154 => [
                 'id' => 155,
                 'name' => 'restore_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            155 => 
-            array (
+            ],
+            155 => [
                 'id' => 156,
                 'name' => 'restore_any_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            156 => 
-            array (
+            ],
+            156 => [
                 'id' => 157,
                 'name' => 'replicate_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            157 => 
-            array (
+            ],
+            157 => [
                 'id' => 158,
                 'name' => 'reorder_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            158 => 
-            array (
+            ],
+            158 => [
                 'id' => 159,
                 'name' => 'delete_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            159 => 
-            array (
+            ],
+            159 => [
                 'id' => 160,
                 'name' => 'delete_any_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            160 => 
-            array (
+            ],
+            160 => [
                 'id' => 161,
                 'name' => 'force_delete_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-            161 => 
-            array (
+            ],
+            161 => [
                 'id' => 162,
                 'name' => 'force_delete_any_user',
                 'guard_name' => 'web',
                 'created_at' => '2023-06-16 00:14:02',
                 'updated_at' => '2023-06-16 00:14:02',
-            ),
-        ));
-        
-        
+            ],
+        ]);
+
+        DB::table('roles')->delete();
+
+        DB::table('roles')->insert([
+            0 => [
+                'id' => 1,
+                'name' => 'super_admin',
+                'guard_name' => 'web',
+                'created_at' => '2023-06-16 00:14:00',
+                'updated_at' => '2023-06-16 00:14:00',
+            ],
+            1 => [
+                'id' => 2,
+                'name' => 'filament_user',
+                'guard_name' => 'web',
+                'created_at' => '2023-06-16 00:14:02',
+                'updated_at' => '2023-06-16 00:14:02',
+            ],
+        ]);
     }
 }

@@ -6,8 +6,10 @@ namespace Database\Seeders;
 
 use App\Models\Company;
 use App\Models\Contact;
+use App\Models\Department;
 use App\Models\Interaction;
 use App\Models\JobTitle;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -20,13 +22,15 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Contact::factory(100)->create();
+        Project::factory(10)->create();
         Interaction::factory(100)->create();
         JobTitle::factory(40)->create();
         Company::factory(10)->create();
+        Department::factory(10)->create();
 
         $this->call([
+            RolePermissionsSeeder::class,
             // ShieldSeeder::class,
         ]);
-        $this->call(PermissionsTableSeeder::class);
     }
 }

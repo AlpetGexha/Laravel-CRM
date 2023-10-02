@@ -3,12 +3,13 @@
 use App\Enums\PronounsEnum;
 use App\Models\Contact;
 use App\Models\User;
+use Database\Seeders\PermissionsTableSeeder;
 use Illuminate\Http\Response;
 use Illuminate\Testing\Fluent\AssertableJson;
-
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\getJson;
 use function Pest\Laravel\postJson;
+use function Pest\Laravel\seed;
 
 it('returns an unauthorized response if the user is not logged in', function () {
     $response = getJson(route('api.contact.index'));
@@ -77,14 +78,19 @@ it('throws an exception when trying to update a contact that does not exist', fu
 
 it('can delete a contact', function () {
     $contact = Contact::factory()->create();
+    // $this->app->make(\Spatie\Permission\PermissionRegistrar::class)->registerPermissions();
+    seed(PermissionsTableSeeder::class);
 
-    actingAs(User::factory()->create())
+    actingAs(User::factory()->create()->assignRole('super_admin'))
         ->deleteJson(route('api.contact.delete', ['uuid' => $contact->uuid]))
         ->assertNoContent();
 });
 
 it('throws an exception when trying to delete a contact that does not exist', function () {
-    actingAs(User::factory()->create())
+    // seed the database
+    seed(PermissionsTableSeeder::class);
+
+    actingAs(User::factory()->create()->assignRole('super_admin'))
         ->deleteJson(route('api.contact.delete', ['uuid' => fake()->uuid]))
         ->assertNotFound();
 });
@@ -96,8 +102,8 @@ function data(string $string = null): array
         'first_name' => $string ?? fake()->name,
         'middle_name' => $string ?? fake()->name,
         'last_name' => $string ?? fake()->name,
-        'preferred_name' => $string ?? fake()->name . ' GG',
-        'email' => $string ? $string . '@gmail.com' : fake()->email,
+        'preferred_name' => $string ?? fake()->name.' GG',
+        'email' => $string ? $string.'@gmail.com' : fake()->email,
         'phone' => $string ?? fake()->phoneNumber,
         'pronouns' => PronounsEnum::random(),
     ];

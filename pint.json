@@ -17,6 +17,5 @@
         "explicit_string_variable":true,
         "fully_qualified_strict_types": true,
         "function_typehint_space": true
-
     }
 }
